@@ -1,0 +1,52 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.head{
+ font-size: 15px !important; 
+ color:#444!important;
+ margin-left:10px !important;
+}
+.num{
+  font-size: 15px !important;
+  opacity: .8 !important;
+  color:#444!important
+ }
+
+.count{
+  /* position: absolute; */
+  /* top: -35px!important; */
+  left: 0;
+  color: #333;
+  font-size: 13px;
+  line-height: 1;
+  text-shadow: none;
+  top: 0;
+  padding: 3px 8px;
+  background: rgba(0,0,0,.1);
+  border-radius: 8px;
+}
+.css-8h4g2e-MuiSlider-valueLabel{
+  background-color: #2f95c0 !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:  #606060;
+  border-radius: 10px;
+}
