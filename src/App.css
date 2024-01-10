@@ -30,9 +30,11 @@
   border-radius: 8px;
 }
 .css-8h4g2e-MuiSlider-valueLabel{
-  background-color: #2f95c0 !important;
+  background-color: #422afb !important;
 }
-
+.css-53tbrc-MuiSlider-root{
+  color:#422afb!important
+}
 /* width */
 ::-webkit-scrollbar {
   width: 5px;

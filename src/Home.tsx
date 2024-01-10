@@ -24,7 +24,11 @@ function Home() {
     const [processingFee,setProcessingFee] = useState<number>(4)
     const [minutesChargeback,setMinutesChargeback] = useState<number>(30)
     const [averageChargeback,setAverageChargeback] = useState<number>(10)
-
+    // =(E14*E13)+(E14*E15)+(E14*E16)+(E17*E13*E14)+(E18*E14)+(E13*E19*E14)+F20
+    // =(disputAndChargebacks*aov)+(disputAndChargebacks*customerAcquisitionCost)
+    // +(disputAndChargebacks*shippingCost)+(aov*productCost*disputAndChargebacks)
+    // +(chargebackFee*disputAndChargebacks)+(aov+disputAndChargebacks+processingFee)+
+    // ((minutesChargeback*disputAndChargebacks)/60)*20
     const AOV= (event:any,type:any)=>{
         // console.log('val',event.target.value)
         if(type ==='Blur' && event.target.value > 500){
@@ -104,6 +108,14 @@ function Home() {
 
         }
     }
+
+    let calulatedValue = Math.round((disputAndChargebacks*aov)
+                           +(disputAndChargebacks*customerAcquisitionCost)
+                            +(disputAndChargebacks*shippingCost)
+                            +(aov*(productCost/100)*disputAndChargebacks)
+                            +(chargebackFee*disputAndChargebacks)
+                            +(aov*disputAndChargebacks*(processingFee/100))
+                            +(((minutesChargeback*disputAndChargebacks)/60)*20))
     return (
         <Grid container spacing={2} style={{height:'600px'}}>
             <Grid item xs={7} style={{paddingLeft:'60px',height:'600px',overflow:'auto'}}>
@@ -302,7 +314,9 @@ function Home() {
                     to Chargebacks
                     </Typography>
                     
-                    <Typography style={{width:'30%',fontSize:'23px',fontWeight:'700',color:'rgb(184, 49, 47)'}}>-$123123</Typography>
+                    <Typography style={{width:'30%',fontSize:'23px',fontWeight:'700',color:'rgb(184, 49, 47)'}}>
+                        -${Math.round(calulatedValue - ((averageChargeback/100)*calulatedValue))}
+                    </Typography>
                 </Box>
                 <Box style={{display:'flex',width:'100%',padding:'20px 0px 0 0px',fontSize:'18px'}}>
                     <Typography style={{display:'flex',color:'#393838',paddingLeft:'10px',fontWeight:'400',width:'70%',fontSize:'14px',textAlign:'left',wordBreak:'break-word'}}>Current Yearly 
