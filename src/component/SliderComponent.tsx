@@ -26,6 +26,14 @@ function SliderComponent({value,title,handleChange,start,end,min,max,strt,sign}:
                 valueLabelFormat={value => <div>{strt ? sign + value :  value + sign}</div>}
                 // step={10}
                 // marks={marks}
+                sx={{
+                    '& .MuiSlider-valueLabel':{
+                        backgroundColor: "#422afb !important"
+                    },
+                    '& .MuiSlider-thumb': {
+                        color:"#422afb !important"
+                    },
+                }}
                 min={min}
                 max={max}
                 valueLabelDisplay="on"

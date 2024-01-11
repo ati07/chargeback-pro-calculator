@@ -29,12 +29,7 @@
   background: rgba(0,0,0,.1);
   border-radius: 8px;
 }
-.css-8h4g2e-MuiSlider-valueLabel{
-  background-color: #422afb !important;
-}
-.css-53tbrc-MuiSlider-root{
-  color:#422afb!important
-}
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
